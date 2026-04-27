@@ -483,3 +483,13 @@ p { color: var(--color-text-soft); }
     /* Make header non-sticky on booker page on mobile so progress isn't covered */
     .page-book .site-header { position: static; }
 }
+
+/* Hero visual — hide entirely on phones; the desktop blob/cards
+   don't add value at narrow widths and were causing layout issues */
+@media (max-width: 960px) {
+    .hero-visual { display: none; }
+    .hero-inner { gap: 0; }
+    /* Tidy up hero so it feels grounded without the visual */
+    .hero { padding: 1.5rem 0 2.5rem; }
+    .hero-trust { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+}
