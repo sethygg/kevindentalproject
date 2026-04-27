@@ -397,17 +397,14 @@ p { color: var(--color-text-soft); }
 }
 .dentist-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
 .dentist-photo {
-    width: 70px; height: 70px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    color: #fff;
-    display: grid; place-items: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    letter-spacing: .04em;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+    background: var(--color-primary-light);
+    display: block;
 }
-.dentist-photo-alt { background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); }
 .dentist-card h3 { margin-bottom: .15rem; }
 .dentist-role {
     font-size: .8rem;
@@ -416,6 +413,46 @@ p { color: var(--color-text-soft); }
     text-transform: uppercase;
     letter-spacing: .08em;
     margin-bottom: .75rem;
+}
+
+/* =================================================
+   TEAM
+   ================================================= */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+.team-card {
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1rem 1.5rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.team-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.team-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+    background: var(--color-primary-light);
+    display: block;
+}
+.team-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: .25rem;
+}
+.team-role {
+    font-size: .75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
 }
 
 /* =================================================
@@ -623,6 +660,7 @@ p { color: var(--color-text-soft); }
     .value-grid { grid-template-columns: repeat(2, 1fr); }
     .testimonial-grid { grid-template-columns: 1fr; }
     .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
 
     .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
@@ -638,6 +676,7 @@ p { color: var(--color-text-soft); }
     .service-grid { grid-template-columns: 1fr; }
     .value-grid { grid-template-columns: 1fr; }
     .dentist-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-cols { grid-template-columns: 1fr 1fr; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
