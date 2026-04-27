@@ -493,3 +493,12 @@ p { color: var(--color-text-soft); }
     .hero { padding: 1.5rem 0 2.5rem; }
     .hero-trust { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
 }
+
+/* Final hero cleanup on mobile — kill the awkward trust stack
+   (the trust-strip below already shows the same stats more nicely)
+   and make sure hero visual is definitely hidden */
+@media (max-width: 960px) {
+    .hero-visual { display: none !important; }
+    .hero-trust { display: none !important; }
+    .hero { padding: 1.5rem 0 2rem; }
+}
